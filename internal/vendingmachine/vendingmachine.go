@@ -9,9 +9,9 @@ import (
 
 type IVendingMachine interface {
 	InsertCoin(coin inventory.Coin)
-	GetItemAndChange() (item inventory.Item, coins []inventory.Coin)
-	SelectItemAndGetPrice(item inventory.Item) (price int)
-	Refund() (coins []inventory.Coin)
+	GetItemAndChange() (item inventory.Item, coins []inventory.Coin, err error)
+	SelectItemAndGetPrice(item inventory.Item) (price int, err error)
+	Refund() (coins []inventory.Coin, err error)
 }
 
 type VendingMachine struct {
