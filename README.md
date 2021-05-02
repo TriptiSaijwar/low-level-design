@@ -1,7 +1,7 @@
 # low-level-design
 
 
-Github Configurations for go get (Through ssh)
+Github Configurations for go get to work (Through ssh)
 
 ```
   $ git config --global url.git@github.com:.insteadOf https://github.com/
