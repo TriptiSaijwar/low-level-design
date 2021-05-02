@@ -10,8 +10,12 @@ const (
 	numOfCoins
 )
 
+func (c Coin) GetName() string {
+	return [...]string{"PENNY", "NICKLE", "DIME", "QUARTER"}[c]
+}
+
 func (c Coin) GetValue() int {
-	return [...]int{1, 5, 10, 25}[c-1]
+	return [...]int{1, 5, 10, 25}[c]
 }
 
 func (c Coin) GetId() int {

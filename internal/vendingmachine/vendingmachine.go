@@ -92,22 +92,22 @@ func (v *VendingMachine) collectChange(amount int) (coins []inventory.Coin, err 
 }
 
 func (v *VendingMachine) getRequiredChange(amount int) (changeCoins []inventory.Coin, err error) {
-	change := v.CurrentBalance - amount
+	change := amount
 	for ; change > 0; {
 		switch {
-		case change > inventory.QUARTER.GetValue() && v.CashInventory.HasItem(inventory.QUARTER.GetId()):
+		case change >= inventory.QUARTER.GetValue() && v.CashInventory.HasItem(inventory.QUARTER.GetId()):
 			change = change - inventory.QUARTER.GetValue()
 			changeCoins = append(changeCoins, inventory.QUARTER)
 			break
-		case change > inventory.DIME.GetValue() && v.CashInventory.HasItem(inventory.DIME.GetId()):
+		case change >= inventory.DIME.GetValue() && v.CashInventory.HasItem(inventory.DIME.GetId()):
 			change = change - inventory.DIME.GetValue()
 			changeCoins = append(changeCoins, inventory.DIME)
 			break
-		case change > inventory.NICKLE.GetValue() && v.CashInventory.HasItem(inventory.NICKLE.GetId()):
+		case change >= inventory.NICKLE.GetValue() && v.CashInventory.HasItem(inventory.NICKLE.GetId()):
 			change = change - inventory.NICKLE.GetValue()
 			changeCoins = append(changeCoins, inventory.NICKLE)
 			break
-		case change > inventory.PENNY.GetValue() && v.CashInventory.HasItem(inventory.PENNY.GetId()):
+		case change >= inventory.PENNY.GetValue() && v.CashInventory.HasItem(inventory.PENNY.GetId()):
 			change = change - inventory.PENNY.GetValue()
 			changeCoins = append(changeCoins, inventory.PENNY)
 			break

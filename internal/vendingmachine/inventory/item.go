@@ -10,11 +10,11 @@ const (
 )
 
 func (i Item) GetName() string {
-	return [...]string{"Coke", "Pepsi", "Soda"}[i-1]
+	return [...]string{"Coke", "Pepsi", "Soda"}[i]
 }
 
 func (i Item) GetPrice() int {
-	return [...]int{20, 25, 30}[i-1]
+	return [...]int{20, 25, 30}[i]
 }
 
 func (c Item) GetId() int {
