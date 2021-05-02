@@ -14,7 +14,7 @@ func (i Item) GetName() string {
 }
 
 func (i Item) GetPrice() int {
-	return [...]int{20, 25, 30}[i]
+	return [...]int{25, 35, 40}[i]
 }
 
 func (c Item) GetId() int {
